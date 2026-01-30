@@ -27,8 +27,6 @@ export NOMINATIM_EMAIL="your_email@example.com"
 
 ## Usage
 
-Generic form:
-
 ```bash
 python test.py "URL"
 ```
