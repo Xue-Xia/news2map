@@ -27,12 +27,6 @@ export NOMINATIM_EMAIL="your_email@example.com"
 
 ## Usage
 
-Run against a real news URL:
-
-```bash
-python test.py "https://www.ndr.de/nachrichten/schleswig-holstein/Nach-Auto-Unfall-in-Pinneberg-Polizei-kontrolliert-Fahrradstrasse,regionnorderstedtnews2738.html"
-```
-
 Generic form:
 
 ```bash
