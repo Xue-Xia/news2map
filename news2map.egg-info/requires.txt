@@ -1,0 +1,11 @@
+pydantic>=2.6
+openai>=1.30
+requests>=2.31
+langdetect>=1.0.9
+geopandas>=0.14
+shapely>=2.0
+fiona>=1.9
+pyproj>=3.6
+
+[test]
+pytest>=7.4

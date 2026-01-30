@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: news2map
+Version: 0.1.0
+Summary: Convert news articles into GIS-ready spatial data.
+Author: Your Name
+License-Expression: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic>=2.6
+Requires-Dist: openai>=1.30
+Requires-Dist: requests>=2.31
+Requires-Dist: langdetect>=1.0.9
+Requires-Dist: geopandas>=0.14
+Requires-Dist: shapely>=2.0
+Requires-Dist: fiona>=1.9
+Requires-Dist: pyproj>=3.6
+Provides-Extra: test
+Requires-Dist: pytest>=7.4; extra == "test"
+
+# news2map
+
+Convert news article text into GIS-ready spatial data.
+
+## Features
+- Input: news article text (German supported)
+- Extract spatial events and places via ChatGPT
+- Geocode places
+- Produce GeoJSON and Shapefile outputs
+
+## Setup
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+
+Set environment variables:
+
+```bash
+export OPENAI_API_KEY="..."
+export NEWS2MAP_LLM_MODEL="gpt-4o-mini"
+```
+
+## Usage
+
+```python
+from news2map.pipeline import run_pipeline
+
+text = open("examples/sample_article_de.txt", "r", encoding="utf-8").read()
+result = run_pipeline(text)
+print(result.geojson_path)
+```
+
+## Project layout
+- `news2map/` core package
+- `tests/` minimal tests
+- `examples/` sample articles
+- `data/outputs/` generated outputs (gitignored)
